@@ -50,7 +50,7 @@
     <div class="wrap">
       <p class="eyebrow">Pháp lý · Ứng dụng Mỹ Thuật CMC</p>
       <h1>Chính sách bảo mật</h1>
-      <p class="meta">Cập nhật lần cuối: 23/11/2026</p>
+      <p class="meta">Cập nhật lần cuối: 24/11/2026</p>
     </div>
   </header>
 
@@ -60,28 +60,36 @@
 
     <h2>2. Thông tin chúng tôi thu thập</h2>
     <ul>
-      <li><strong>Tài khoản:</strong> email, họ tên, số điện thoại, ảnh đại diện (nếu bạn tải lên), vai trò (admin / chi nhánh / giáo viên).</li>
+      <li><strong>Tài khoản:</strong> email, họ tên, ảnh đại diện (nếu bạn tải lên), vai trò (admin / chi nhánh / giáo viên). Số điện thoại là <strong>tuỳ chọn</strong> — không bắt buộc để tạo hoặc dùng tài khoản.</li>
       <li><strong>Dữ liệu nghiệp vụ:</strong> thông tin học viên, học phí, lớp học, tin nhắn liên hệ và lịch sử liên quan tới quản lý trung tâm.</li>
-      <li><strong>Check-in giáo viên:</strong> ảnh selfie trong khung tròn, thời điểm check-in, trạng thái ON/OFF; vị trí GPS chỉ khi thiết bị cấp quyền và chỉ dùng để xác nhận địa điểm dạy.</li>
+      <li><strong>Check-in giáo viên / face data:</strong> xem mục <a href="#face-data">2A. Dữ liệu khuôn mặt (face data)</a> bên dưới. Ứng dụng cũng lưu thời điểm check-in, trạng thái ON/OFF; vị trí GPS chỉ khi thiết bị cấp quyền và chỉ dùng để xác nhận địa điểm dạy.</li>
       <li><strong>Dữ liệu kỹ thuật:</strong> phiên đăng nhập để duy trì tài khoản an toàn.</li>
     </ul>
     <p>Chúng tôi <strong>không</strong> bán dữ liệu cá nhân và không dùng dữ liệu cho quảng cáo theo dõi (tracking) trên App Store.</p>
+
+    <h2 id="face-data">2A. Dữ liệu khuôn mặt (face data)</h2>
+    <p><strong>Chúng tôi thu thập gì:</strong> khi giáo viên check-in, ứng dụng chụp một ảnh selfie JPEG trong khung tròn (ảnh tĩnh chứa khuôn mặt người dùng). Ứng dụng <strong>không</strong> dùng Face ID / TrueDepth, không tạo faceprint / biometric template, không chạy nhận diện khuôn mặt hay so khớp danh tính.</p>
+    <p><strong>Mục đích sử dụng:</strong> chỉ để ghi nhận bằng chứng có mặt khi check-in buổi dạy (ảnh selfie + thời gian + tuỳ chọn vị trí), phục vụ vận hành nội bộ trung tâm. Không dùng cho quảng cáo, marketing, huấn luyện AI, hay nhận diện sinh trắc học.</p>
+    <p><strong>Lưu trữ:</strong> ảnh selfie được tải lên và lưu trên <strong>Supabase Storage</strong> (máy chủ của nhà cung cấp hạ tầng, truy cập qua HTTPS, kiểm soát bởi RLS / policy bucket). Metadata check-in (thời gian, loại, trạng thái) lưu trong database Supabase.</p>
+    <p><strong>Chia sẻ với bên thứ ba:</strong> ảnh selfie <strong>không</strong> được bán hoặc chia sẻ cho bên thứ ba vì mục đích quảng cáo. Chỉ nhà cung cấp hạ tầng <strong>Supabase</strong> lưu trữ/xử lý dữ liệu trong phạm vi cung cấp dịch vụ hosting; quản trị viên / nhân viên vận hành trung tâm có thể xem ảnh check-in trong phạm vi công việc. Apple nhận dữ liệu phân phối App Store theo chính sách của Apple, không nhận ảnh check-in từ chúng tôi.</p>
+    <p><strong>Thời gian lưu giữ và xoá:</strong> ảnh check-in selfie được giữ tối đa khoảng <strong>3 tháng</strong> rồi tự xoá (cleanup) để giảm dung lượng. Người dùng có thể yêu cầu xoá sớm hơn bằng cách liên hệ email ở mục Liên hệ; khi tài khoản bị xoá theo chức năng trong app, dữ liệu hồ sơ liên quan được xử lý theo quy trình xoá tài khoản.</p>
+    <p><strong>Tóm tắt tiếng Anh (for App Review):</strong> We collect a single circular selfie JPEG at teacher check-in. It is not Face ID, not a biometric faceprint, and not used for facial recognition. Stored on Supabase Storage (HTTPS); retained about 3 months then deleted; not sold or shared with advertising third parties; visible only to authorized center staff for attendance verification.</p>
 
     <h2>3. Mục đích sử dụng</h2>
     <ul>
       <li>Xác thực đăng nhập và phân quyền theo vai trò.</li>
       <li>Quản lý học viên, học phí, lớp học, điểm danh và liên hệ nội bộ trung tâm.</li>
-      <li>Ghi nhận check-in giáo viên (ảnh, thời gian, tuỳ chọn vị trí) phục vụ vận hành.</li>
+      <li>Ghi nhận check-in giáo viên (ảnh selfie, thời gian, tuỳ chọn vị trí) phục vụ vận hành — chi tiết tại mục 2A.</li>
       <li>Bảo mật tài khoản và ngăn truy cập trái phép.</li>
     </ul>
 
     <h2>4. Lưu trữ và bảo mật</h2>
-    <p>Dữ liệu được lưu trên hạ tầng <strong>Supabase</strong> với HTTPS và kiểm soát truy cập (RLS). Ảnh check-in được lưu tối đa khoảng <strong>3 tháng</strong> rồi tự xoá để giảm dung lượng. Ảnh đại diện chỉ lưu khi bạn chủ động tải lên.</p>
+    <p>Dữ liệu được lưu trên hạ tầng <strong>Supabase</strong> với HTTPS và kiểm soát truy cập (RLS). Ảnh check-in (face/selfie data) được lưu tối đa khoảng <strong>3 tháng</strong> rồi tự xoá để giảm dung lượng — xem mục 2A. Ảnh đại diện chỉ lưu khi bạn chủ động tải lên.</p>
 
     <h2>5. Quyền của bạn</h2>
     <ul>
-      <li>Xem và cập nhật hồ sơ (họ tên, SĐT, ảnh đại diện) trong ứng dụng.</li>
-      <li>Yêu cầu hỗ trợ chỉnh sửa / xoá dữ liệu phù hợp vận hành trung tâm qua email bên dưới.</li>
+      <li>Xem và cập nhật hồ sơ (họ tên, SĐT tuỳ chọn, ảnh đại diện) trong ứng dụng.</li>
+      <li>Yêu cầu hỗ trợ chỉnh sửa / xoá dữ liệu (gồm ảnh selfie check-in) phù hợp vận hành trung tâm qua email bên dưới.</li>
       <li>Rút quyền Camera / Ảnh / Vị trí bất kỳ lúc nào trong Cài đặt iOS; một số tính năng (check-in ảnh, avatar, vị trí) có thể không dùng được.</li>
     </ul>
 
@@ -89,7 +97,7 @@
     <p>Ứng dụng phục vụ nhân viên và giáo viên trung tâm, không hướng đến trẻ em dưới 13 tuổi. Chúng tôi không cố ý thu thập dữ liệu từ đối tượng này.</p>
 
     <h2>7. Bên thứ ba</h2>
-    <p>Chúng tôi dùng nhà cung cấp hạ tầng cần thiết để vận hành app (ví dụ Supabase cho auth/database/storage; Apple cho phân phối App Store). Các bên này xử lý dữ liệu theo hợp đồng và chính sách riêng của họ, trong phạm vi cung cấp dịch vụ.</p>
+    <p>Chúng tôi dùng nhà cung cấp hạ tầng cần thiết để vận hành app (ví dụ Supabase cho auth/database/storage; Apple cho phân phối App Store). Các bên này xử lý dữ liệu theo hợp đồng và chính sách riêng của họ, trong phạm vi cung cấp dịch vụ. Face/selfie check-in data không được chia sẻ với bên thứ ba ngoài hạ tầng lưu trữ cần thiết (Supabase), như mô tả ở mục 2A.</p>
 
     <h2>8. Thay đổi chính sách</h2>
     <p>Chúng tôi có thể cập nhật chính sách này. Mọi thay đổi sẽ được đăng tại trang này kèm ngày cập nhật.</p>
