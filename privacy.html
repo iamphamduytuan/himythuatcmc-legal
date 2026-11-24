@@ -50,13 +50,13 @@
     <div class="wrap">
       <p class="eyebrow">Pháp lý · Ứng dụng Mỹ Thuật CMC</p>
       <h1>Chính sách bảo mật</h1>
-      <p class="meta">Cập nhật lần cuối: 24/11/2026</p>
+      <p class="meta">Cập nhật lần cuối: 25/11/2026</p>
     </div>
   </header>
 
   <main class="card">
     <h2>1. Giới thiệu</h2>
-    <p>Chính sách này mô tả cách ứng dụng <strong>Mỹ Thuật CMC</strong> (còn gọi là HiMyThuatCMC, “ứng dụng”, “chúng tôi”) thu thập, sử dụng và bảo vệ thông tin khi bạn dùng ứng dụng dành cho giáo viên và nhân viên trung tâm Mỹ Thuật CMC.</p>
+    <p>Chính sách này mô tả cách ứng dụng <strong>Mỹ Thuật CMC</strong> (còn gọi là HiMyThuatCMC, “ứng dụng”, “chúng tôi”) thu thập, sử dụng và bảo vệ thông tin khi bạn dùng ứng dụng. Ứng dụng được phân phối công khai trên App Store: <strong>bất kỳ giáo viên mỹ thuật / nhân sự trung tâm dạy vẽ nào</strong> cũng có thể tải về và tự đăng ký tài khoản, không cần lời mời hay thuộc một doanh nghiệp cụ thể.</p>
 
     <h2>2. Thông tin chúng tôi thu thập</h2>
     <ul>
@@ -69,7 +69,7 @@
 
     <h2 id="face-data">2A. Dữ liệu khuôn mặt (face data)</h2>
     <p><strong>Chúng tôi thu thập gì:</strong> khi giáo viên check-in, ứng dụng chụp một ảnh selfie JPEG trong khung tròn (ảnh tĩnh chứa khuôn mặt người dùng). Ứng dụng <strong>không</strong> dùng Face ID / TrueDepth, không tạo faceprint / biometric template, không chạy nhận diện khuôn mặt hay so khớp danh tính.</p>
-    <p><strong>Mục đích sử dụng:</strong> chỉ để ghi nhận bằng chứng có mặt khi check-in buổi dạy (ảnh selfie + thời gian + tuỳ chọn vị trí), phục vụ vận hành nội bộ trung tâm. Không dùng cho quảng cáo, marketing, huấn luyện AI, hay nhận diện sinh trắc học.</p>
+    <p><strong>Mục đích sử dụng:</strong> chỉ để ghi nhận bằng chứng có mặt khi check-in buổi dạy (ảnh selfie + thời gian + tuỳ chọn vị trí), phục vụ quản lý buổi dạy của giáo viên. Không dùng cho quảng cáo, marketing, huấn luyện AI, hay nhận diện sinh trắc học.</p>
     <p><strong>Lưu trữ:</strong> ảnh selfie được tải lên và lưu trên <strong>Supabase Storage</strong> (máy chủ của nhà cung cấp hạ tầng, truy cập qua HTTPS, kiểm soát bởi RLS / policy bucket). Metadata check-in (thời gian, loại, trạng thái) lưu trong database Supabase.</p>
     <p><strong>Chia sẻ với bên thứ ba:</strong> ảnh selfie <strong>không</strong> được bán hoặc chia sẻ cho bên thứ ba vì mục đích quảng cáo. Chỉ nhà cung cấp hạ tầng <strong>Supabase</strong> lưu trữ/xử lý dữ liệu trong phạm vi cung cấp dịch vụ hosting; quản trị viên / nhân viên vận hành trung tâm có thể xem ảnh check-in trong phạm vi công việc. Apple nhận dữ liệu phân phối App Store theo chính sách của Apple, không nhận ảnh check-in từ chúng tôi.</p>
     <p><strong>Thời gian lưu giữ và xoá:</strong> ảnh check-in selfie được giữ tối đa khoảng <strong>3 tháng</strong> rồi tự xoá (cleanup) để giảm dung lượng. Người dùng có thể yêu cầu xoá sớm hơn bằng cách liên hệ email ở mục Liên hệ; khi tài khoản bị xoá theo chức năng trong app, dữ liệu hồ sơ liên quan được xử lý theo quy trình xoá tài khoản.</p>
@@ -94,7 +94,7 @@
     </ul>
 
     <h2>6. Trẻ em</h2>
-    <p>Ứng dụng phục vụ nhân viên và giáo viên trung tâm, không hướng đến trẻ em dưới 13 tuổi. Chúng tôi không cố ý thu thập dữ liệu từ đối tượng này.</p>
+    <p>Ứng dụng hướng đến giáo viên và nhân sự trung tâm dạy vẽ (người lớn), không hướng đến trẻ em dưới 13 tuổi. Chúng tôi không cố ý thu thập dữ liệu từ đối tượng này.</p>
 
     <h2>7. Bên thứ ba</h2>
     <p>Chúng tôi dùng nhà cung cấp hạ tầng cần thiết để vận hành app (ví dụ Supabase cho auth/database/storage; Apple cho phân phối App Store). Các bên này xử lý dữ liệu theo hợp đồng và chính sách riêng của họ, trong phạm vi cung cấp dịch vụ. Face/selfie check-in data không được chia sẻ với bên thứ ba ngoài hạ tầng lưu trữ cần thiết (Supabase), như mô tả ở mục 2A.</p>
